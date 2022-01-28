@@ -1,0 +1,14 @@
+[
+    {
+        "_id":"19231412313313123",
+        "Name":"admin",
+        "PasswordHashed":"",
+        "isAdmin":"true"
+    },
+    {
+        "_id":"123451313131313",
+        "Name":"customuser",
+        "PasswordHashed":"",
+        "isAdmin":"true"
+    }
+]
