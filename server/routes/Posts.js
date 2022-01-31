@@ -19,15 +19,19 @@ require("dotenv").config();
     loadedPosts1 = LoadPosts1();
   }
   exports.getPostsHandeler1 = (req, res) => {
+    res.json(loadedPosts1);
+  };
+  exports.postPostsHandeler1 = (req, res) => {
+    console.log(req);
     console.log(req.query);
-    console.log(req.body);
+    console.log(req.content);
     console.log(req.params);
     const newPost1 = {
       id: req.query.id,
     };
-    loadedPosts1.unshift(newPost1);
+    // loadedPosts1.unshift(newPost1);
   
-    fs.writeFileSync("server/Data/postsTest.json", JSON.stringify(loadedPosts1));
+    // fs.writeFileSync("server/Data/postsTest.json", JSON.stringify(loadedPosts1));
   
     res.send(loadedPosts1);
   };
@@ -62,6 +66,7 @@ require("dotenv").config();
   exports.getSinglePostHandeler = (req, res) => {
     res.json(GetPostById(req.params.PostId));
   };
+
   exports.postPostHandeler = (req, res) => {
     if (req.signedCookies.name === 'admin') {
       res.send('This is admin panel');

@@ -87,8 +87,9 @@ if (!isDev && cluster.isMaster) {
   app.use(cookieParser('TennoGen'));
 
   // Answer API requests.
-  app.use('/posts', PostsRoutes.getPostsHandeler);
+  app.get('/posts', PostsRoutes.getPostsHandeler);
   app.get('/postsTest', PostsRoutes.getPostsHandeler1);
+  app.post('/postsTest', PostsRoutes.postPostsHandeler1)
   app.get('/singlepost/:postID', PostsRoutes.getSinglePostHandeler)
   app.post('/post/:postID', PostsRoutes.postPostHandeler);
   app.put('/post/:postID', PostsRoutes.putPostHandeler);
